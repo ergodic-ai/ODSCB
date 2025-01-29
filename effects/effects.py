@@ -508,8 +508,6 @@ class EffectEstimator:
 
         output_data = data.copy()
         output_data["effect"] = ite
-        output_data["treatment"] = treatment_series
-        output_data["outcome"] = outcome_series
 
         return output_data
 
