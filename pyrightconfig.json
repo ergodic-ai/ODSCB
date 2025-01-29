@@ -1,0 +1,12 @@
+{
+  "include": ["app", "llm", "effects"],
+  "exclude": ["**/node_modules", "**/__pycache__", "build", "dist"],
+  "ignore": [],
+  "defineConstant": {},
+  "typeCheckingMode": "basic",
+  "useLibraryCodeForTypes": true,
+  "reportMissingImports": true,
+  "reportMissingTypeStubs": false,
+  "pythonVersion": "3.8",
+  "pythonPlatform": "All"
+}
