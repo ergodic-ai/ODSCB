@@ -4,8 +4,9 @@ from typing import Any, Generator, Generic, List, Type, TypeVar
 import instructor
 from litellm import completion
 from openai.types.chat import ChatCompletionMessageParam
-from pydantic import BaseModel
+from pydantic import BaseModel, Field
 from dotenv import load_dotenv
+from rich import print as rprint
 
 load_dotenv()
 
@@ -53,12 +54,14 @@ def test_create():
     ]
 
     class UserDetail(BaseModel):
-        name: str
-        age: int
+        name: str = Field(description="The name of the user")
+        age: int = Field(description="The age of the user")
 
     response = create(messages, UserDetail)
     assert response.name == "Jason"
     assert response.age == 25
+
+    rprint(response)
 
 
 if __name__ == "__main__":
